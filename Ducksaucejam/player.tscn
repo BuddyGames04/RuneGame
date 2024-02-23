@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://msnba8706yl1"]
+[gd_scene load_steps=4 format=3 uid="uid://msnba8706yl1"]
 
 [ext_resource type="Texture2D" uid="uid://bm16ji3lw1ock" path="res://Assets/Player/Runeexploreridle1-export.png" id="1_dn3rf"]
+[ext_resource type="Script" path="res://player.gd" id="1_mbyre"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8l3s"]
 size = Vector2(20, 29)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_mbyre")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dn3rf")
