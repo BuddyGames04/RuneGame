@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgdwjybniy0ul"]
+
+[ext_resource type="PackedScene" uid="uid://msnba8706yl1" path="res://player.tscn" id="1_cpikh"]
+[ext_resource type="Texture2D" uid="uid://bmxx7jy4fgcqr" path="res://Assets/Tiles/groundTiles-Sheet.png" id="2_hf1v5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkyj1"]
+texture = ExtResource("2_hf1v5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ow721"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_gkyj1")
+
+[node name="Level1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_cpikh")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ow721")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(131069, 131072, 0, 131070, 131072, 0, 131071, 131072, 0, 65536, 131072, 0, 65537, 131072, 0, 65538, 131072, 0, 65539, 131072, 0)
