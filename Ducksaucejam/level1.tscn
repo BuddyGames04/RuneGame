@@ -1,11 +1,23 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgdwjybniy0ul"]
 
 [ext_resource type="PackedScene" uid="uid://msnba8706yl1" path="res://player.tscn" id="1_cpikh"]
-[ext_resource type="Texture2D" uid="uid://bmxx7jy4fgcqr" path="res://Assets/Tiles/groundTiles-Sheet.png" id="2_hf1v5"]
-[ext_resource type="Texture2D" uid="uid://xxm7g5ev1rx2" path="res://Assets/Tiles/backgroundTiles-Sheet.png" id="3_87ips"]
+[ext_resource type="Texture2D" uid="uid://dlkabfw8epipq" path="res://Assets/Tiles/GroundTiles.png" id="1_igo1i"]
+[ext_resource type="Texture2D" uid="uid://ds3mowkh0y8gj" path="res://Assets/Tiles/backgroundTiles.png" id="2_ugfqx"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gkyj1"]
-texture = ExtResource("2_hf1v5")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxe4j"]
+texture = ExtResource("2_ugfqx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gj5j5"]
+tile_size = Vector2i(32, 32)
+sources/3 = SubResource("TileSetAtlasSource_pxe4j")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jcyed"]
+texture = ExtResource("1_igo1i")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -35,30 +47,20 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_ow721"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_gkyj1")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qs3c"]
-texture = ExtResource("3_87ips")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_gj5j5"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_0qs3c")
+sources/1 = SubResource("TileSetAtlasSource_jcyed")
 
 [node name="TemplateLevel" type="Node2D"]
-
-[node name="PhysicalMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ow721")
-rendering_quadrant_size = 32
-format = 2
-layer_0/tile_data = PackedInt32Array(196603, 262144, 0, 196604, 131072, 0, 196605, 196608, 0, 196606, 131072, 0, 196607, 131072, 0, 131072, 131072, 0, 131073, 131072, 0, 131074, 131072, 0, 131075, 131072, 0, 131076, 262144, 0, 131066, 262144, 0, 65530, 65536, 0, -6, 262144, 0, 196602, 327680, 0, 131077, 327680, 0, 65541, 262144, 0, 5, 0, 0, -65531, 262144, 0, -65542, 262144, 0, -131078, 262144, 0, -131067, 262144, 0, -196603, 262144, 0, -196614, 327680, 0, -262139, 327680, 0, -196613, 262144, 0, -196612, 262144, 0, -196611, 262144, 0, -196610, 262144, 0, -196609, 262144, 0, -262144, 65536, 0, -262141, 0, 0, -262143, 262144, 0, -262142, 262144, 0, -262140, 262144, 0)
 
 [node name="BackGroundMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gj5j5")
 rendering_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(65533, 65536, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -65536, 0, 0, -1, 65536, 0, -2, 65536, 0, -3, 65536, 0, -4, 0, 0, 65532, 65536, 0, -65532, 0, 0, 4, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -196604, 0, 0, -196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -131076, 0, 0, -131077, 0, 0)
+layer_0/tile_data = PackedInt32Array(65533, 65539, 0, 65534, 65539, 0, 0, 65539, 0, 1, 65539, 0, 2, 196611, 0, 3, 65539, 0, -65533, 3, 0, -65534, 3, 0, -65535, 3, 0, -65536, 3, 0, -1, 3, 0, -2, 3, 0, -3, 3, 0, 65532, 65539, 0, -65532, 3, 0, 4, 65539, 0, 131068, 131075, 0, 131069, 3, 0, 131070, 3, 0, 131071, 3, 0, 65536, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, -5, 3, 0, 65531, 65539, 0, 131067, 3, 0, -65541, 65539, 0, -65540, 65539, 0, -65539, 196611, 0, -65538, 65539, 0, -65537, 65539, 0, -131072, 65539, 0, -131071, 65539, 0, -131070, 65539, 0, -131069, 65539, 0, -131068, 65539, 0, -196604, 3, 0, -196605, 3, 0, -196606, 3, 0, -196607, 3, 0, -196608, 3, 0, -131073, 3, 0, -131074, 3, 0, -131075, 3, 0, -131076, 3, 0, -131077, 3, 0, -4, 3, 0)
+
+[node name="PhysicalMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ow721")
+rendering_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(196603, 131073, 0, 196604, 131073, 0, 196605, 131073, 0, 196606, 131073, 0, 196607, 131073, 0, 131072, 131073, 0, 131073, 131073, 0, 131074, 131073, 0, 131075, 131073, 0, 131076, 131073, 0, 131066, 131073, 0, 65530, 131073, 0, -6, 131073, 0, 196602, 131073, 0, 131077, 131073, 0, 65541, 131073, 0, 5, 131073, 0, -65531, 131073, 0, -65542, 131073, 0, -131078, 131073, 0, -131067, 131073, 0, -196603, 131073, 0, -196614, 131073, 0, -262139, 131073, 0, -196613, 131073, 0, -196612, 131073, 0, -196611, 131073, 0, -196610, 131073, 0, -196609, 131073, 0, -262144, 131073, 0, -262141, 131073, 0, -262143, 131073, 0, -262142, 131073, 0, -262140, 131073, 0, 65535, 131073, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_cpikh")]
